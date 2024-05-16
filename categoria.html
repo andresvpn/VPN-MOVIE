@@ -1,100 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VPN-MOVIE</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* Estilos generales */
         body {
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
-            font-family: 'Open Sans', sans-serif;
-            background-color: #141e30;
-            color: #fff;
-            height: 100vh;
+            background: linear-gradient(to right, #7F7FD5, #86A8E7, #91EAE4);
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-        }
-
-        /* Estilos del encabezado */
-        header {
-            text-align: center;
-            padding: 50px 0;
-            width: 100%;
-            background-image: linear-gradient(to right, #141e30, #243b55);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 5em;
-            margin: 0;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        p {
-            font-size: 1.8em;
-            margin: 30px 0;
-        }
-
-        /* Estilos de las categorías */
-        .categorias {
-            display: flex;
             justify-content: center;
-            margin-bottom: 40px;
+            height: 100vh;
+            overflow: hidden;
         }
 
-        .categoria {
-            padding: 15px 30px;
-            margin: 0 20px;
-            background-color: #007bff;
+        .title {
+            font-size: 48px;
+            font-weight: bold;
             color: #fff;
-            text-decoration: none;
-            border-radius: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+        }
+
+        .category-container {
+            display: flex;
+            overflow-x: auto;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .category {
+            flex: 0 0 300px;
+            height: 400px;
+            margin: 0 10px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease;
+            transition: transform 0.3s;
         }
 
-        .categoria:hover {
-            background-color: #0056b3;
+        .category:hover {
+            transform: scale(1.05);
         }
 
-        /* Estilos del botón de búsqueda */
-        .btn-buscador {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #28a745;
+        .category img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+            transition: filter 0.3s;
+        }
+
+        .category:hover img {
+            filter: brightness(0.5);
+        }
+
+        .category h2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 36px;
             color: #fff;
-            text-decoration: none;
-            border-radius: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-buscador:hover {
-            background-color: #1e7e34;
-        }
-
-        .btn-buscador i {
-            margin-right: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 80%;
         }
     </style>
 </head>
+
 <body>
-    <header>
-        <h1>VPN-MOVIE</h1>
-        <p>Explora nuestras categorías:</p>
-        <div class="categorias">
-            <a href="accion.html" class="categoria" id="accion">Acción</a>
-            <a href="animacion.html" class="categoria" id="animacion">Animación</a>
-            <!-- Agrega más botones de categorías aquí -->
-        </div>
-        <a href="buscador.html" class="btn-buscador"><i class="fa fa-search"></i> Buscar Películas</a>
-    </header>
+    <h1 class="title">CATEGORÍAS</h1>
+    <div class="category-container">
+        <a href="animacion.html" class="category">
+            <img src="https://telegra.ph/file/626faa702d352ff2669f6.jpg" alt="animacion">
+            <h2>ANIMACIÓN</h2>
+        </a>
+        <a href="accion.html" class="category">
+            <img src="https://telegra.ph/file/07600fbd5362a52d7f559.jpg" alt="accion">
+            <h2>ACCIÓN</h2>
+        </a>
+    </div>
+  
 </body>
+
 </html>
