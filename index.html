@@ -1,119 +1,164 @@
 <!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>VPN-MOVIE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+*{user-select:none;margin:0;padding:0;box-sizing:border-box;outline:none;user-select:none;}
+body{background:#000;}
+div .poster{overflow-x:scroll;overflow-y:hidden;white-space:nowrap;margin:3px;}
+#xs-header{background:#000;left: 0;position: fixed;top:0px;width: 100%;z-index: 90;height: 8%;}
+footer{background:#000;display:flex;width:100%;bottom:0;justify-content:space-around;align-items:center;padding:6px 2px;position:fixed;left:0;right:0px;color:#fff;}
+footer div{font-size:10px;text-align:center;justify-content:center;align-items:center;}
+footer i{padding-left:0px;}
+/*footer end*/
+footer img{height:20px;width:20px;margin-bottom:3px;}
+footer svg{height:20px;width:20px;margin-bottom:3px;}
+footer span{transform:scale(1);}
+#s-f{margin-bottom:40px;}
+    .SliderSarp-container {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 10px;
+    }
 
-<html lang="en">
+    .SliderSarp-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
 
-	<head>
+    .SliderSarp-slide.active {
+      opacity: 1;
+    }
 
-		<meta charset="UTF-8">
+    .SliderSarp-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    .SliderSarp-button {
+      border: 2px solid white;
+      font-weight: bold;
+      position: absolute;
+      text-decoration: none;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 20px;
+      border-radius: 20px;
+      background-color: black;color: white;font-size: 9px;text-transform: uppercase;cursor: pointer;z-index: 2;}
+ .SliderSarp-progress {position: absolute;bottom: 0;left: 0; height: 5px;background-color: white;opacity: 0.5;width: 0; transition: width 1s ease-in-out;}
+ .Sarp {
+    position: absolute; top: 3px; right: 3px; background-color: red; color: white; padding: 3px; border-radius: 20px; z-index: 1; font-size: 14px; font-style: italic; font-weight: bold; 
+}
 
-		<link rel="stylesheet" href="css/estilos.css">
-
-		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> 
-
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-
-		<title>VPN-MOVIE</title>
-
-	  <meta property="og:site_name" name="og:site_name" content="VPN-MOVIE">
-  <meta poperty="og:title" name="og:title" content="VPN-MOVIE"> 
-  <meta property="og:image" name="og:image" content="https://telegra.ph/file/bef25f617a6cd2384db0c.jpg">
-  <meta property="og:description" name="og:description" content=" disfruta de una experiencia cinematográfica única. Accede a una amplia selección de películas gratuitas en alta calidad. ¡Descárgala ahora y sumérgete en el mundo del cine desde la comodidad de tu hogar!">
-	</head>
-
-
-
-	<body>
-
-		<!-- Header -->
-
-		<main>			
-
-			<div class="content-all">
-
-				<header></header>
-
-				<label>
-
-					Películas
-
-				</label>
-
-
-
-				<div class="btn">
-
-					<a href="buscador.html"><i class="fa fa-search"></i></a>
-
-				</div>
-
-			</div>
-
-		</main>
-
-
-
-		<div class="container">
-
-			
-
-		  <div class="item">
-
-				<a href="peliculas/WANTED MAN.html"><img src="https://media.themoviedb.org/t/p/w220_and_h330_face/pmdgdb8biQLLzTjySZLPdK13KwM.jpg" alt="" class="item-img"></a>
-
-			</div>
-
-		  <div class="item">
-
-				<a href="peliculas/intime.html"><img src="https://media.themoviedb.org/t/p/w220_and_h330_face/3Mwj2sIONQckOZP3YwsUXF7U5I4.jpg" alt="" class="item-img"></a>
-
-			</div>
-
-			<div class="item">
-
-				<a href="peliculas/ant-man2.html"><img src="https://image.tmdb.org/t/p/original/lKwQmUHXY9WEGBLKNRdsLPoJhIK.jpg" alt="" class="item-img"></a>
-
-			</div>
-
-			<div class="item">
-
-				<a href="peliculas/leo.html"><img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/hlQLb6xsqRdoXQiVv2umZejSSpb.jpg" alt="" class="item-img"></a>
-
-			</div>
-
-            <div class="item">
-
-				<a href="peliculas/enredados.html"><img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/bFUreK1CxkUwk4y6W2Qoo88l0UF.jpg" alt="" class="item-img"></a>
-
-			</div>
-
-			<div class="item">
-
-				<a href="peliculas/La Liga de la Justicia de Zack Snyder.html"><img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/wcIJgChypo0s6ILm9Dkr13rV5q0.jpg" alt="" class="item-img"></a>
-
-			</div>
-
-			<div class="item">
-
-				<a href="peliculas/Dungeons & Dragons Honor entre ladrones.html"><img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/77XBzUUFX5aHI3Jz3ipJTtsDWzk.jpg" alt="" class="item-img"></a>
-
-			</div>
-
-			<div class="item">
-
-				<a href="peliculas/Los Croods Una nueva era.html"><img src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/5uMWKEmegf5aTJnp1u98JF4QerP.jpg" alt="" class="item-img"></a>
-
-			</div>
+</style>
+</head>
+<body>
+  
+  
+<div class="SliderSarp-container">
+  
+    <div class="SliderSarp-slide active">
+      <img src="https://image.tmdb.org/t/p/original/jC7I0BMII4nBu71YWf5PRB9aAmv.jpg" alt="Imagen 1">
+      <a href="peliculas/Los Croods una nueva era.html" class="SliderSarp-button">Ver ahora</a>
+      <span class="Sarp">
+  PELICULA RECOMENDADA</span>
+    </div>
+    
+    <div class="SliderSarp-slide">
+      <img src="https://image.tmdb.org/t/p/original/vMsJbgfmjV1EEtsu2XN8RFyzqy8.jpg" alt="Imagen 2">
+      <a href="peliculas/intime.html" class="SliderSarp-button">Ver ahora</a>
+      <span class="Sarp">
+  PELICULA RECOMENDADA</span>
+    </div>
+    <div class="SliderSarp-slide">
+      <img src="https://image.tmdb.org/t/p/original/9hwFNJ8qK0dpbrg2NVrAk1Vto8V.jpg" alt="Imagen 3" style="position: relative; display: inline-block;">
+      <a href="peliculas/Dungeons & Dragons Honor entre ladrones.html" class="SliderSarp-button">Ver ahora</a>
+      <span class="Sarp">
+  PELICULA RECOMENDADA</span>
+    </div>
+        <div class="SliderSarp-slide">
+      <img src="https://image.tmdb.org/t/p/original/66jeC4MF0hO1NPh1qPDUmecDThC.jpg" alt="Imagen 3" style="position: relative; display: inline-block;">
+      <a href="peliculas/La Liga de la Justicia de Zack Snyder.html" class="SliderSarp-button">Ver ahora</a>
+      <span class="Sarp">
+  PELICULA RECOMENDADA</span>
+    </div>
+    <div class="SliderSarp-progress"></div>
+  </div>
+  
 
 
+<!--Slider-->
+<h2><font style="color:#fff;font-size:16px;padding:8px;">Acción</font></h2>
+<div><div align="center" class="poster">
+<a href="peliculas/WANTED MAN.html" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://media.themoviedb.org/t/p/w220_and_h330_face/pmdgdb8biQLLzTjySZLPdK13KwM.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  720p</span>
+</a>
+<a href="peliculas/intime.html" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://media.themoviedb.org/t/p/w220_and_h330_face/3Mwj2sIONQckOZP3YwsUXF7U5I4.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  HD</span>
+</a>
+<a href="peliculas/Dungeons & Dragons Honor entre ladrones.html" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/77XBzUUFX5aHI3Jz3ipJTtsDWzk.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">HD</span>
+</a>
+<a href="peliculas/La Liga de la Justicia de Zack Snyder.html" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/wcIJgChypo0s6ILm9Dkr13rV5q0.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">720p</span>
+</a>
+<a href="peliculas/ant-man2.html" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://image.tmdb.org/t/p/original/lKwQmUHXY9WEGBLKNRdsLPoJhIK.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">HD</span>
+</a>
 
+</div></div>
 
+<!--Slider-->
+<h2><font style="color:#fff;font-size:16px;padding:8px;">Animación</font></h2>
+<div><div align="center" class="poster">
+<a href="peliculas/leo.html" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/hlQLb6xsqRdoXQiVv2umZejSSpb.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  720p</span>
+</a>
+<a href="peliculas/Los Croods Una nueva era.html" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/5uMWKEmegf5aTJnp1u98JF4QerP.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  HD</span>
+</a>
+<a href="peliculas/enredados.html" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/bFUreK1CxkUwk4y6W2Qoo88l0UF.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  HD</span>
+</a>
+</div></div>
+</body>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    let slides = document.querySelectorAll(".SliderSarp-slide");
+    let currentSlide = 0;
+    let slideInterval = setInterval(nextSlide, 4000); // Cambiar cada 2 segundos
 
-		</div>
+    function nextSlide() {
+        slides[currentSlide].classList.remove("active");
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add("active");
+    }
+})
 
-
-
-	</body>
-
+</script>
 </html>
