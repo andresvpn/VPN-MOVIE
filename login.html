@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Login VPN-MOVIE</title>
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
@@ -19,10 +19,11 @@
         .login-container {
             background-color: rgba(255, 255, 255, 0.9);
             padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            border-radius: 20px; /* Aumentado el radio para bordes más redondeados */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Aumentada la intensidad de la sombra */
             width: 350px;
             text-align: center;
+            border: 1px solid #ccc; /* Bordes del contenedor */
         }
         .login-container h1 {
             margin-bottom: 20px;
@@ -50,6 +51,8 @@
             color: #333;
             font-size: 16px;
             text-align: center;
+            /* Añadido efecto 3D a los inputs */
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
         }
         .login-container input[type="submit"] {
             background: linear-gradient(135deg, #f12711, #f5af19);
@@ -61,6 +64,8 @@
             font-size: 18px;
             border-radius: 8px;
             text-transform: uppercase;
+            /* Efecto hover */
+            transition: background 0.3s;
         }
         .login-container input[type="submit"]:hover {
             background: linear-gradient(135deg, #f5af19, #f12711);
