@@ -88,7 +88,7 @@
             <input type="password" id="password" name="password" placeholder="Enter your password" required>
             <div>
                 <input type="checkbox" id="rememberMe" name="rememberMe">
-                <label for="rememberMe">recordarme</label>
+                <label for="rememberMe">Remember me</label>
             </div>
             <input type="submit" value="Sign In">
             <div id="error-message" class="error-message"></div>
@@ -96,6 +96,22 @@
     </div>
 
     <script>
+        const usuarios = [
+            { nombre: "andresvpn", contraseña: "1088829889", ruta: "/gen/gen.html" },
+            { nombre: "Manuel", contraseña: "contraseña_manuel", ruta: "/gen/gen1.html" },
+            // Agregar más usuarios si es necesario
+        ];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const rememberedUser = localStorage.getItem('rememberedUser');
+            if (rememberedUser) {
+                const user = usuarios.find(user => user.nombre === rememberedUser);
+                if (user) {
+                    window.location.href = user.ruta;
+                }
+            }
+        });
+
         document.getElementById('loginForm').addEventListener('submit', function(event) {
             event.preventDefault();
             const username = document.getElementById('username').value;
@@ -115,15 +131,6 @@
                 document.getElementById('error-message').innerText = 'Invalid username or password';
             }
         });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const rememberedUser = localStorage.getItem('rememberedUser');
-            if (rememberedUser) {
-                document.getElementById('username').value = rememberedUser;
-                document.getElementById('rememberMe').checked = true;
-            }
-        });
     </script>
-    <script src="user.js"></script>
 </body>
 </html>
