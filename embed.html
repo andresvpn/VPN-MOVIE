@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cine max</title>
+    <link rel="icon" type="image/x-icon" href="https://cinemax-stream-go.blogspot.com/favicon.ico">
+    <style>
+        body {
+            background-color: #000;
+        }
+        .hacker {
+            background: red;
+            color: white;
+            width: 100%;
+            height: 40px;
+            border-radius: 10px;
+            border: none;
+            font-size: 18px;
+        }
+        .hacker:active {
+            background: black;
+            color: red;
+        }
+        .video-responsive {
+            position: none;
+            padding-bottom: 50.25%; /* 16/9 ratio */
+            padding-top: 40px; /* IE6 workaround */
+            height: 0;
+            overflow: hidden;
+        }
+        .video-responsive iframe,
+        .video-responsive object,
+        .video-responsive embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script>
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+        var id = getParameterByName('p');
+        var embed = getParameterByName('embed') || getParameterByName('r') || false;
+    </script>
+</head>
+<body>
+    <div class="main section" id="page_body">
+        <div class="widget Blog" data-version="2" id="Blog1">
+            <div class="blog-posts hfeed container">
+                <article class="post-outer-container">
+                    <div class="post-outer">
+                        <div class="post">
+                            <div class="post-body entry-content float-container" id="post-body-1962080905993990398">
+                                <div class="video-responsive">
+                                    <script>
+                                        if (embed) {
+                                            document.write('<iframe sandbox="allow-scripts allow-same-origin" frameborder="0" allow="encrypted-media" allowfullscreen src="' + atob(embed) + '"></iframe>');
+                                        } else {
+                                            document.write('<img class="embed-responsive-item" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiEfGCW7Lp5nQ5QSpWjaYUM-Z5ei92xLginFe0HmlqBHJRlRja0Gl80boEolNMw8k0cdeZM-3MacsRkidBzR4OmvirohzxDKSd1R0j7Bd4yn8aaPr5Y-CobvSVz6dSxApE0ClKTJXazo4PFXeU8tBjniGlxSYN1PA3-8uUo73e19HvVe1yOSwshWybD/s320/IMG-20240516-WA0018.jpg">');
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

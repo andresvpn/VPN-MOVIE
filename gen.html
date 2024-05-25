@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de URLs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .hacker {
+            background: red;
+            color: white;
+            width: 100%;
+            height: 40px;
+            border-radius: 10px;
+            border: none;
+            font-size: 18px;
+        }
+        .hacker:active {
+            background: black;
+            color: red;
+        }
+        .generated-content {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Generador de URLs</h1>
+        <form id="url-generator">
+            <label for="key">URL</label>
+            <input type="text" id="key" name="key" required>
+            <br>
+            <button type="button" class="hacker" onclick="generateURL()">Generar URL</button>
+        </form>
+        <div class="generated-content">
+            <p>URL Generada:</p>
+            <div id="generated-url"></div>
+            <button class="hacker" id="copy-url-button">Copiar URL</button>
+        </div>
+        <div id="iframe-container" style="display: none;">
+            <iframe id="generated-iframe" frameborder="0" style="width: 100%; height: 400px;"></iframe>
+            <button class="hacker" id="copy-iframe-button">Copiar Iframe</button>
+        </div>
+    </div>
+
+    <script src="//ssl.p.jwpcdn.com/player/v/8.26.0/jwplayer.js"></script>
+    <script>
+        jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
+
+        function generateURL() {
+            var key = document.getElementById("key").value;
+            var encodedKey = btoa(key);
+            var domain = window.location.hostname; // Obtiene el dominio automáticamente
+            var generatedURL = `https://${domain}/embed?param=${encodedKey}`;
+
+            // Mostrar el div del iframe y el iframe generado
+            var iframeContainer = document.getElementById("iframe-container");
+            var generatedIframe = document.getElementById("generated-iframe");
+            iframeContainer.style.display = "block";
+
+            // Generar el iframe y establecer la URL
+            generatedIframe.src = generatedURL;
+            document.getElementById("generated-url").innerText = generatedURL;
+
+            // Habilitar el botón de copia de iframe
+            var copyIframeButton = document.getElementById("copy-iframe-button");
+            copyIframeButton.addEventListener("click", function () {
+                // Copiar el iframe al portapapeles
+                var iframeCode = generatedIframe.outerHTML;
+                var textArea = document.createElement("textarea");
+                textArea.value = iframeCode;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand("copy");
+                document.body.removeChild(textArea);
+                alert("Iframe copiado al portapapeles");
+            });
+
+            // Habilitar el botón de copia de URL
+            var copyUrlButton = document.getElementById("copy-url-button");
+            copyUrlButton.addEventListener("click", function () {
+                // Copiar la URL al portapapeles
+                var urlToCopy = document.getElementById("generated-url").textContent;
+                var textArea = document.createElement("textarea");
+                textArea.value = urlToCopy;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand("copy");
+                document.body.removeChild(textArea);
+                alert("URL copiada al portapapeles");
+            });
+        }
+    </script>
+</body>
+</html>
