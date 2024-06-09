@@ -82,10 +82,14 @@
     <div id="seriesContainer" class="series-container"></div>
 
     <script>
+        const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/';
+
         async function loadCategories() {
+            console.log('Loading categories...');
             try {
-                const response = await fetch('http://mastvgo.com/player_api.php?username=Lidia99&password=Lidia9928&action=get_series_categories');
+                const response = await fetch(`${CORS_PROXY}http://mastvgo.com/player_api.php?username=Lidia99&password=Lidia9928&action=get_series_categories`);
                 const categories = await response.json();
+                console.log('Categories:', categories);
                 const categoryDropdown = document.getElementById('categoryDropdown');
                 categoryDropdown.innerHTML = '';
                 categories.forEach(category => {
@@ -95,16 +99,17 @@
                     categoryDropdown.appendChild(option);
                 });
                 loadSeries(categories[0].category_id); // Cargar la primera categoría por defecto después de cargar las categorías.
-                document.getElementById('categoryTitle').textContent = `CATEGORIAS: ${categories[0].category_name}`;
             } catch (error) {
                 console.error('Error loading categories:', error);
             }
         }
 
         async function loadSeries(categoryId) {
+            console.log(`Loading series for category ${categoryId}...`);
             try {
-                const response = await fetch(`http://mastvgo.com/player_api.php?username=Lidia99&password=Lidia9928&action=get_series&category_id=${categoryId}`);
+                const response = await fetch(`${CORS_PROXY}http://mastvgo.com/player_api.php?username=Lidia99&password=Lidia9928&action=get_series&category_id=${categoryId}`);
                 const series = await response.json();
+                console.log('Series:', series);
                 displaySeries(series);
             } catch (error) {
                 console.error('Error loading series:', error);
@@ -133,9 +138,11 @@
         }
 
         async function loadEpisodes(seriesId) {
+            console.log(`Loading episodes for series ${seriesId}...`);
             try {
-                const response = await fetch(`http://mastvgo.com/player_api.php?username=Lidia99&password=Lidia9928&action=get_series_info&series_id=${seriesId}`);
+                const response = await fetch(`${CORS_PROXY}http://mastvgo.com/player_api.php?username=Lidia99&password=Lidia9928&action=get_series_info&series_id=${seriesId}`);
                 const data = await response.json();
+                console.log('Episodes:', data);
                 displayEpisodes(data.episodes[1]);
             } catch (error) {
                 console.error('Error loading episodes:', error);
