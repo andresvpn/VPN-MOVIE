@@ -34,27 +34,18 @@ function getUrlParams() {
 
 function setPlayer() {
   const { file, poster } = getUrlParams();
-  if (file) {
-    const videoElement = document.createElement('video');
-    videoElement.setAttribute('id', 'player');
-    videoElement.setAttribute('controls', 'controls');
-    videoElement.setAttribute('poster', poster || '');
-    videoElement.style.width = '100%';
-    videoElement.style.height = '100%';
+  if (file && file.startsWith("http:")) {
+    // Usar un proxy para convertir http a https
+    const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+    const proxiedFile = proxyUrl + file;
 
-    const sourceElement = document.createElement('source');
-    sourceElement.setAttribute('src', file);
-    sourceElement.setAttribute('type', 'video/mp4'); // Asegúrate de que el tipo sea correcto
-
-    videoElement.appendChild(sourceElement);
-    document.body.appendChild(videoElement);
-
-    videoElement.addEventListener('error', (event) => {
-      console.error('Error de reproducción:', event);
-      // Aquí puedes agregar más manejadores de errores si es necesario
+    const player = new Playerjs({
+      id: "player",
+      file: proxiedFile,
+      poster: poster || ""
     });
   } else {
-    console.error("No se encontró el parámetro 'file' en la URL.");
+    alert("El parámetro 'file' no es válido o no empieza con 'http:'.");
   }
 }
 
