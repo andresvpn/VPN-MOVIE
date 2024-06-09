@@ -19,7 +19,7 @@ body {
   height: 100%;
 }
 </style>
-<script src="/js/playerjs.js"></script> <!-- Asegúrate de que esta ruta es correcta -->
+<script src="../js/player.js"></script> <!-- Asegúrate de que esta ruta es correcta -->
 </head>
 <body>
 <div id="player"></div>
@@ -35,9 +35,13 @@ function getUrlParams() {
 function setPlayer() {
   const { file, poster } = getUrlParams();
   if (file) {
+    // Usar un proxy para convertir http a https
+    const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+    const proxiedFile = file.startsWith("http:") ? proxyUrl + file : file;
+
     const player = new Playerjs({
       id: "player",
-      file: file,
+      file: proxiedFile,
       poster: poster || ""
     });
   } else {
