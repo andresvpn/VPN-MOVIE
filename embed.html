@@ -24,32 +24,24 @@ body {
 <body>
 <div id="player"></div>
 <script>
-function getUrlParams() {
+function getFileUrl() {
   const urlParams = new URLSearchParams(window.location.search);
-  return {
-    file: urlParams.get('file'),
-    poster: urlParams.get('poster')
-  };
+  return urlParams.get('file');
 }
 
-function setPlayer() {
-  const { file, poster } = getUrlParams();
-  if (file) {
-    // Usar un proxy para convertir http a https
-    const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-    const proxiedFile = file.startsWith("http:") ? proxyUrl + file : file;
-
+function setFileUrl() {
+  const fileUrl = getFileUrl();
+  if (fileUrl) {
     const player = new Playerjs({
       id: "player",
-      file: proxiedFile,
-      poster: poster || ""
+      file: fileUrl,
     });
   } else {
     console.error("No se encontró el parámetro 'file' en la URL.");
   }
 }
 
-window.onload = setPlayer;
+window.onload = setFileUrl;
 </script>
 </body>
 </html>
