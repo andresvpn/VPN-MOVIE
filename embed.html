@@ -1,55 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Embedded Video Player</title>
-<style>
-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f1f1f1;
-}
-#player {
-  width: 100%;
-  height: 100%;
-}
-</style>
-<script src="js/playerjs.js"></script> <!-- Asegúrate de que esta ruta es correcta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Video</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            margin: 0;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            max-width: 800px;
+            max-height: 450px;
+            border: 5px solid #fff;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+    </style>
 </head>
 <body>
-<div id="player"></div>
-<script>
-function getUrlParams() {
-  const urlParams = new URLSearchParams(window.location.search);
-  return {
-    file: urlParams.get('file'),
-    poster: urlParams.get('poster')
-  };
-}
+    <video controls id="videoPlayer">
+        Tu navegador no soporta la reproducción de video.
+    </video>
 
-function setPlayer() {
-  const { file, poster } = getUrlParams();
-  if (file && file.startsWith("http:")) {
-    // Usar un proxy para convertir http a https
-    const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-    const proxiedFile = proxyUrl + file;
+    <script>
+        // Obtener parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const file = urlParams.get('file');
 
-    const player = new Playerjs({
-      id: "player",
-      file: "http://xcm.budtv-ultra.com:25461/movie/carlospix/Rx5HpkPqgp/131480.mp4",
-      poster: poster || ""
-    });
-  } else {
-    alert("El parámetro 'file' no es válido o no empieza con 'http:'.");
-  }
-}
-
-window.onload = setPlayer;
-</script>
+        // Verificar si el parámetro 'file' existe y establecer la fuente del video
+        if (file) {
+            const videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.src = file;
+        } else {
+            alert('No se proporcionó un archivo de video.');
+        }
+    </script>
 </body>
 </html>
