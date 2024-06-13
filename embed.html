@@ -14,32 +14,17 @@
             margin: 0;
         }
         video {
-            width: 100%;
-            height: 100%;
+            width: 80%;
             max-width: 800px;
-            max-height: 450px;
             border: 5px solid #fff;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
         }
     </style>
 </head>
 <body>
-    <video controls id="videoPlayer">
+    <video controls>
+        <source src="http://mastvgo.com/movie/Lidia99/Lidia9928/2765.mp4" type="video/mp4">
         Tu navegador no soporta la reproducción de video.
     </video>
-
-    <script>
-        // Obtener parámetros de la URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const file = urlParams.get('file');
-
-        // Verificar si el parámetro 'file' existe y establecer la fuente del video
-        if (file) {
-            const videoPlayer = document.getElementById('videoPlayer');
-            videoPlayer.src = file;
-        } else {
-            alert('No se proporcionó un archivo de video.');
-        }
-    </script>
 </body>
 </html>
