@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Conexiones - Estilo TERMUX</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 20px;
+        }
+        #panel {
+            border: 2px solid #00ff00;
+            padding: 10px;
+        }
+        .user {
+            margin-bottom: 10px;
+        }
+        .user-name {
+            font-weight: bold;
+        }
+        .connections {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="panel">
+        <!-- El contenido se generará dinámicamente aquí -->
+    </div>
+<script src="user.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        function updatePanel() {
+            const panel = document.getElementById('panel');
+            panel.innerHTML = ''; // Limpiar el contenido actual
+
+            usuarios.forEach(user => {
+                const userDiv = document.createElement('div');
+                userDiv.className = 'user';
+
+                const userNameDiv = document.createElement('div');
+                userNameDiv.className = 'user-name';
+                userNameDiv.textContent = `Usuario: ${user.nombre}`;
+
+                const connectionsDiv = document.createElement('div');
+                connectionsDiv.className = 'connections';
+                connectionsDiv.textContent = `Conexiones: ${Object.values(user.conexiones).reduce((a, b) => a + b, 0)}`;
+
+                userDiv.appendChild(userNameDiv);
+                userDiv.appendChild(connectionsDiv);
+                panel.appendChild(userDiv);
+            });
+        }
+
+        setInterval(updatePanel, 1000); // Actualiza cada segundo
+    });
+</script>
+</body>
+</html>
