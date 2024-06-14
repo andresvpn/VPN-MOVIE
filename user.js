@@ -1,6 +1,6 @@
 const usuarios = [
-    { id: 1, nombre: "1234", contraseña: "1234", fechaVencimiento: "2024-07-01" },
-    { id: 2, nombre: "andresvpn", contraseña: "1088829889", fechaVencimiento: "2024-04-24" },
+    { id: 1, nombre: "1234", contraseña: "1234", fechaVencimiento: "2024-07-01", limite: 1, conexiones: { login: 0, home: 0, live: 0, series: 0, buscador: 0, notificaciones: 0 } },
+    { id: 2, nombre: "andresvpn", contraseña: "1088829889", fechaVencimiento: "2024-04-24", limite: 2, conexiones: { login: 0, home: 0, live: 0, series: 0, buscador: 0, notificaciones: 0 } },
     // Agrega más usuarios si es necesario
 ];
 
@@ -10,6 +10,8 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     const errorMessage = document.getElementById('error-message');
+    const welcomeMessage = document.getElementById('welcomeMessage');
+    const expirationDate = document.getElementById('expirationDate');
 
     const usuario = usuarios.find(user => user.nombre === username && user.contraseña === password);
     if (usuario) {
@@ -19,10 +21,24 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         if (fechaActual > fechaVencimiento) {
             errorMessage.textContent = 'Usuario y contraseña han vencido';
         } else {
-            errorMessage.textContent = ` bienvenid@ ${usuario.nombre}`; // Clear any previous error messages
-            setTimeout(() => {
-                window.location.href = 'index.html'
-            }, 3000);
+            let globalConexiones = 0;
+            for (let user of usuarios) {
+                for (let key in user.conexiones) {
+                    globalConexiones += user.conexiones[key];
+                }
+            }
+
+            if (globalConexiones >= usuarios.length * 5) {
+                errorMessage.textContent = 'Límite global de usuarios activos alcanzado';
+            } else {
+                usuario.conexiones.login++;
+                errorMessage.textContent = `¡Bienvenid@ ${usuario.nombre}!`;
+                expirationDate.textContent = `Fecha de vencimiento: ${fechaVencimiento.toLocaleDateString()}`;
+
+                setTimeout(() => {
+                    window.location.href = `home.html?user=${usuario.nombre}&password=${usuario.contraseña}`;
+                }, 3000);
+            }
         }
     } else {
         errorMessage.textContent = 'Usuario o contraseña incorrectos';

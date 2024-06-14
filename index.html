@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>VPN-MOVIE</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
   <meta property="og:site_name" name="og:site_name" content="VPN-MOVIE">
   <meta poperty="og:title" name="og:title" content="VPN-MOVIE"> 
   <meta property="og:image" name="og:image" content="https://telegra.ph/file/bef25f617a6cd2384db0c.jpg">
@@ -67,28 +68,66 @@ footer span{transform:scale(1);}
     position: absolute; top: 3px; right: 3px; background-color: red; color: white; padding: 3px; border-radius: 20px; z-index: 1; font-size: 14px; font-style: italic; font-weight: bold; 
 }
 
+.alert {
+    background-color: #000000;
+    color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 9px;
+    text-align: right;
+    max-width: 600px;
+    position: relative; /* Añadir para permitir el uso de position en los hijos */
+}
 
-        .alert {
-            background-color: #ffcc00;
-            color: #333;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            text-align: center;
-            max-width: 600px;
-        }
-        .alert a {
-            color: #ff0000;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .alert a:hover {
-            text-decoration: underline;
-        }
+.alert a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.alert i {
+    color: #ffffff;
+  margin-right: 8px;
+}
+
+.alert img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+    width: 120px; /* Ancho del icono */
+    height: 50px; /* Alto del icono */
+    position: absolute; /* Posicionar la imagen de forma absoluta */
+    left: 10px; /* Mover la imagen a la izquierda */
+    top: 50%; /* Centrar verticalmente */
+    transform: translateY(-50%); /* Ajustar para centrar verticalmente */
+    text-align: left;
+}
+
+.alert a:hover {
+    text-decoration: underline;
+}
+  
+  .btn a{ 
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+
 </style>
 </head>
+
 <body>
  
+			<div class="alert">
+ 		<div class="btn">
+ 		  <img src="https://telegra.ph/file/f0a31a865b923228da7b6.jpg" alt="" class="item-img">
+					<a href="buscador" id="buscador"><i class="fa fa-search" style="font-size: 28px;"></i></a>
+ 		  <a href="notifi" id="noti"><i class="fas fa-bell"  style="font-size: 28px;"></i> <span class="Sarp">
+  0</span></a>
+				</div>
+			</div>
+		
+  
 <div class="SliderSarp-container">
   
   
@@ -96,40 +135,40 @@ footer span{transform:scale(1);}
       
     <div class="SliderSarp-slide active">
       <img src="https://image.tmdb.org/t/p/original/2xIYzqit0Q1x0S2ffO5bH2cz830.jpg" alt="Imagen 1">
-      <a href="peliculas/wish.html" class="SliderSarp-button">Ver ahora</a>
+      <a href="go:19" class="SliderSarp-button">Ver ahora</a>
       <span class="Sarp">
   PELICULA RECOMENDADA</span>
     </div>
     
     <div class="SliderSarp-slide">
       <img src="https://image.tmdb.org/t/p/original/t8fVVLsRUEzbLd0kXI3uQKHb0bv.jpg" alt="Imagen 1">
-      <a href="peliculas/kungfu_panda_4.html" class="SliderSarp-button">Ver ahora</a>
+      <a href="https://andresvpn.github.io/VPN-MOVIE/peliculas/kungfu_panda_4.html" class="SliderSarp-button">Ver ahora</a>
       <span class="Sarp">
   PELICULA RECOMENDADA</span>
     </div>
     
     <div class="SliderSarp-slide">
       <img src="https://image.tmdb.org/t/p/original/9c6YcIUJ1hxoCnoPs3HU4Bgy6Uj.jpg" alt="Imagen 1">
-      <a href="peliculas/telma.html" class="SliderSarp-button">Ver ahora</a>
+      <a href="https://andresvpn.github.io/VPN-MOVIE/peliculas/telma.html" class="SliderSarp-button">Ver ahora</a>
       <span class="Sarp">
   PELICULA RECOMENDADA</span>
     </div>
     
     <div class="SliderSarp-slide">
-      <img src="https://image.tmdb.org/t/p/original/vMsJbgfmjV1EEtsu2XN8RFyzqy8.jpg" alt="Imagen 2">
-      <a href="peliculas/intime.html" class="SliderSarp-button">Ver ahora</a>
+      <img src="https://image.tmdb.org/t/p/original/6oeRMTP7oS0Vai866ur0lLgs0Om.jpg" alt="Imagen 2">
+      <a href="go:8" class="SliderSarp-button">Ver ahora</a>
       <span class="Sarp">
   PELICULA RECOMENDADA</span>
     </div>
     <div class="SliderSarp-slide">
       <img src="https://image.tmdb.org/t/p/original/9hwFNJ8qK0dpbrg2NVrAk1Vto8V.jpg" alt="Imagen 3" style="position: relative; display: inline-block;">
-      <a href="peliculas/Dungeons & Dragons Honor entre ladrones.html" class="SliderSarp-button">Ver ahora</a>
+      <a href="https://andresvpn.github.io/VPN-MOVIE/peliculas/Dungeons & Dragons Honor entre ladrones.html" class="SliderSarp-button">Ver ahora</a>
       <span class="Sarp">
   PELICULA RECOMENDADA</span>
     </div>
         <div class="SliderSarp-slide">
       <img src="https://image.tmdb.org/t/p/original/66jeC4MF0hO1NPh1qPDUmecDThC.jpg" alt="Imagen 3" style="position: relative; display: inline-block;">
-      <a href="peliculas/La Liga de la Justicia de Zack Snyder.html" class="SliderSarp-button">Ver ahora</a>
+      <a href="https://andresvpn.github.io/VPN-MOVIE/peliculas/La Liga de la Justicia de Zack Snyder.html" class="SliderSarp-button">Ver ahora</a>
       <span class="Sarp">
   PELICULA RECOMENDADA</span>
     </div>
@@ -141,94 +180,300 @@ footer span{transform:scale(1);}
 <!--Slider-->
 <h2><font style="color:#fff;font-size:16px;padding:8px;">Acción | ficción</font></h2>
 <div><div align="center" class="poster">
-  <a href="peliculas/godzilla_kong.html" style="position: relative; display: inline-block;">
+<a href="go:35" style="position: relative; display: inline-block;">
+  <img class="poster" src="http://mastvgo.com:80/images/1CX9HZ1TpsR6jq_dGSnHkF7DaaYG-JnaH_5zbvTz1M5mB5g6BUIWNSoocDNYisyLD4w4im6plfFTjE8zCaB6xAPM8nCPeFYVg6A5Jf5ul6Q.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  720p</span>
+</a>
+<a href="go:34" style="position: relative; display: inline-block;">
+  <img class="poster" src="http://mastvgo.com:80/images/1CX9HZ1TpsR6jq_dGSnHkF7DaaYG-JnaH_5zbvTz1M5mB5g6BUIWNSoocDNYisyLMXM1WOY1_3_sxauYdeSrDAi-eOZbO5THZANpYR34Fa8.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  720p</span>
+</a>
+  <a href="https://andresvpn.github.io/VPN-MOVIE/peliculas/godzilla_kong.html" style="position: relative; display: inline-block;">
   <img class="poster" src="https://media.themoviedb.org/t/p/w220_and_h330_face/tMefBSflR6PGQLv7WvFPpKLZkyk.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
   <span class="Sarp">
   720p</span>
 </a>
-<a href="peliculas/GODZILLA 2014.html" style="position: relative; display: inline-block;">
+<a href="https://andresvpn.github.io/VPN-MOVIE/peliculas/GODZILLA 2014.html" style="position: relative; display: inline-block;">
   <img class="poster" src="https://media.themoviedb.org/t/p/w220_and_h330_face/zokD6uxR2iWfYM3Y84yGJvnNTK7.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
   <span class="Sarp">
   HD</span>
 </a>
 
-<a href="peliculas/colombiana.html" style="position: relative; display: inline-block;">
+<a href="https://andresvpn.github.io/VPN-MOVIE/peliculas/colombiana.html" style="position: relative; display: inline-block;">
   <img class="poster" src="https://media.themoviedb.org/t/p/w220_and_h330_face/rEdGDgRB3gducezNSIyx2lbKQy4.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
   <span class="Sarp">
   HD</span>
 </a>
-<a href="peliculas/WANTED MAN.html" style="position: relative; display: inline-block;">
+<a href="https://andresvpn.github.io/VPN-MOVIE/peliculas/WANTED MAN.html" style="position: relative; display: inline-block;">
   <img class="poster" src="https://media.themoviedb.org/t/p/w220_and_h330_face/pmdgdb8biQLLzTjySZLPdK13KwM.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
   <span class="Sarp">
   720p</span>
 </a>
-<a href="peliculas/intime.html" style="position: relative; display: inline-block;">
+<a href="https://andresvpn.github.io/VPN-MOVIE/peliculas/intime.html" style="position: relative; display: inline-block;">
   <img class="poster" src="https://media.themoviedb.org/t/p/w220_and_h330_face/3Mwj2sIONQckOZP3YwsUXF7U5I4.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
   <span class="Sarp">
   HD</span>
 </a>
-<a href="peliculas/Dungeons & Dragons Honor entre ladrones.html" style="position: relative; display: inline-block;">
+<a href="https://andresvpn.github.io/VPN-MOVIE/peliculas/Dungeons & Dragons Honor entre ladrones.html" style="position: relative; display: inline-block;">
   <img class="poster" src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/77XBzUUFX5aHI3Jz3ipJTtsDWzk.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
   <span class="Sarp">HD</span>
 </a>
-<a href="peliculas/La Liga de la Justicia de Zack Snyder.html" style="position: relative; display: inline-block;">
+<a href="https://andresvpn.github.io/VPN-MOVIE/peliculas/La Liga de la Justicia de Zack Snyder.html" style="position: relative; display: inline-block;">
   <img class="poster" src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/wcIJgChypo0s6ILm9Dkr13rV5q0.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
   <span class="Sarp">720p</span>
 </a>
-<a href="peliculas/ant-man2.html" style="position: relative; display: inline-block;">
+<a href="https://andresvpn.github.io/VPN-MOVIE/peliculas/ant-man2.html" style="position: relative; display: inline-block;">
   <img class="poster" src="https://image.tmdb.org/t/p/original/lKwQmUHXY9WEGBLKNRdsLPoJhIK.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">HD</span>
+</a>
+<a href="go:23" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://btv.mx/posters/zX1Hi0j7Yn4jv2eDHyIMlHP8lDb.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
   <span class="Sarp">HD</span>
 </a>
 
 </div></div>
+
+
+
+
+<div><div align="center" class="poster">
+<a href="go:39" style="position: relative; display: inline-block;">
+  <img class="poster" src="http://mastvgo.com:80/images/1CX9HZ1TpsR6jq_dGSnHkF7DaaYG-JnaH_5zbvTz1M5mB5g6BUIWNSoocDNYisyLN7Ngm5JSpijG2qguvR-i56sXayrLrkkuHjWG2UHioXQ.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">HD</span>
+</a>
+<a href="go:38" style="position: relative; display: inline-block;">
+  <img class="poster" src="http://mastvgo.com:80/images/1CX9HZ1TpsR6jq_dGSnHkF7DaaYG-JnaH_5zbvTz1M5mB5g6BUIWNSoocDNYisyLjpiPb1FRc3BPwAFKvfPFPvcWdkew-Q7xAszxz7AGG2A.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">HD</span>
+</a>
+<a href="go:37" style="position: relative; display: inline-block;">
+  <img class="poster" src="http://mastvgo.com:80/images/1CX9HZ1TpsR6jq_dGSnHkF7DaaYG-JnaH_5zbvTz1M5mB5g6BUIWNSoocDNYisyL-HsCUulKIur3fYl_2kzTS3OIzsLmlRBaqpsMPOT6qXY.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">HD</span>
+</a>
+<a href="go:36" style="position: relative; display: inline-block;">
+  <img class="poster" src="http://mastvgo.com:80/images/1CX9HZ1TpsR6jq_dGSnHkF7DaaYG-JnaH_5zbvTz1M5mB5g6BUIWNSoocDNYisyLkg1gn1NE04G_fpqcFR057dGucwBIqeTIe4K_bCi01T8.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">HD</span>
+</a>
+<a href="go:12" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://btv.mx/posters/1568245267247.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">HD</span>
+</a>
+<a href="go:11" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://btv.mx/posters/1547941534295.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">HD</span>
+</a>
+<a href="go:7" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://btv.mx/posters/1493232144231.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">HD</span>
+</a>
+<a href="go:8" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://btv.mx/posters/xEzDzqNJerVMKwdVKU7ZOtlPVZ7.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">HD</span>
+</a>
+<a href="go:9" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://btv.mx/posters/5OuXyasK50mnIWaKQjqdWRy9sDE.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">HD</span>
+</a>
+<a href="go:10" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://btv.mx/posters/1543857531528.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">HD</span>
+</a>
+<a href="go:24" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://btv.mx/posters/ewPz4CtrgyQZaCRpubtG5IedIkp.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">HD</span>
+</a>
+</div></div>
+
+
+
+<div><div align="center" class="poster">
+<a href="go:46" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://image.tmdb.org/t/p/original/bFOasfXkY2abyjg7jPlz6ONxd.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">HD</span>
+</a>
+<a href="go:45" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://image.tmdb.org/t/p/w500/hpnuXlKKWznTgbheGe4iQXzkuwJ.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">HD</span>
+</a>
+<a href="go:40" style="position: relative; display: inline-block;">
+  <img class="poster" src="http://mastvgo.com/images/1CX9HZ1TpsR6jq_dGSnHkF7DaaYG-JnaH_5zbvTz1M5mB5g6BUIWNSoocDNYisyLMpVIQR-Euj0x-Ox7WS6f4sxBIYlpyEyWJ1nemFOC4wk.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">HD</span>
+</a>
+<a href="go:41" style="position: relative; display: inline-block;">
+  <img class="poster" src="http://mastvgo.com/images/1CX9HZ1TpsR6jq_dGSnHkF7DaaYG-JnaH_5zbvTz1M5mB5g6BUIWNSoocDNYisyLr9qaEvRZwBeSujjZFG3oJjb-4mw6vRsG4GHK5XUJYyE.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">HD</span>
+</a>
+<a href="go:43" style="position: relative; display: inline-block;">
+  <img class="poster" src="http://mastvgo.com/images/1CX9HZ1TpsR6jq_dGSnHkF7DaaYG-JnaH_5zbvTz1M5mB5g6BUIWNSoocDNYisyLkI1lCihWofbqWiB_DO3d_vZRE7NwITP2GAsfLxF9Ajg.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">HD</span>
+</a>
+<a href="go:44" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://image.tmdb.org/t/p/w500/nygOUcBKPHFTbxsYRFZVePqgPK6.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">HD</span>
+</a>
+<a href="go:42" style="position: relative; display: inline-block;">
+  <img class="poster" src="http://mastvgo.com/images/1CX9HZ1TpsR6jq_dGSnHkF7DaaYG-JnaH_5zbvTz1M5mB5g6BUIWNSoocDNYisyLuEj_g0aEok2wZBGGQfJxmgzT_d4WtCfuXQ2LtUo6O4o.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">HD</span>
+</a>
+<a href="go:47" style="position: relative; display: inline-block;">
+  <img class="poster" src="http://mastvgo.com/images/1CX9HZ1TpsR6jq_dGSnHkF7DaaYG-JnaH_5zbvTz1M5mB5g6BUIWNSoocDNYisyLe4EgTb4RhWVNMly0M-kCs03UHKVUgH0qYb0jIJEHpck.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">HD</span>
+</a>
+</div></div>
+
 
 <!--Slider-->
   
 <h2><font style="color:#fff;font-size:16px;padding:8px;">Animación</font></h2>
 <div><div align="center" class="poster">
-      <a href="peliculas/kungfu_panda_4.html" style="position: relative; display: inline-block;">
+   <a href="go:33" style="position: relative; display: inline-block;">
+  <img class="poster" src="http://mastvgo.com:80/images/1CX9HZ1TpsR6jq_dGSnHkF7DaaYG-JnaH_5zbvTz1M5mB5g6BUIWNSoocDNYisyLdJtOf4GjOewc45U6g7vHWTK-glpCFB3JH1495CBmu6Q.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  HD</span>
+</a>
+   <a href="go:31" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/fYOJaaCpqq1NatziVJntmsXXDi8.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  HD</span>
+</a>
+   <a href="go:25" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://btv.mx/posters/6cpb2IP2c8gEbS2E2VfLKfx04cP.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  720p</span>
+</a>
+      <a href="https://andresvpn.github.io/VPN-MOVIE/peliculas/kungfu_panda_4.html" style="position: relative; display: inline-block;">
   <img class="poster" src="https://media.themoviedb.org/t/p/w220_and_h330_face/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
   <span class="Sarp">
   720p</span>
 </a>
-    <a href="peliculas/telma.html" style="position: relative; display: inline-block;">
+    <a href="https://andresvpn.github.io/VPN-MOVIE/peliculas/telma.html" style="position: relative; display: inline-block;">
   <img class="poster" src="https://media.themoviedb.org/t/p/w220_and_h330_face/yutiEZ7taGDNau2jGjKIdDwQpDw.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
   <span class="Sarp">
   720p</span>
 </a>
-<a href="peliculas/leo.html" style="position: relative; display: inline-block;">
+<a href="https://andresvpn.github.io/VPN-MOVIE/peliculas/leo.html" style="position: relative; display: inline-block;">
   <img class="poster" src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/hlQLb6xsqRdoXQiVv2umZejSSpb.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
   <span class="Sarp">
   720p</span>
 </a>
-<a href="peliculas/Los Croods Una nueva era.html" style="position: relative; display: inline-block;">
+<a href="https://andresvpn.github.io/VPN-MOVIE/peliculas/Los Croods Una nueva era.html" style="position: relative; display: inline-block;">
   <img class="poster" src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/5uMWKEmegf5aTJnp1u98JF4QerP.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
   <span class="Sarp">
   HD</span>
 </a>
-<a href="peliculas/enredados.html" style="position: relative; display: inline-block;">
+<a href="https://andresvpn.github.io/VPN-MOVIE/peliculas/enredados.html" style="position: relative; display: inline-block;">
   <img class="poster" src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/bFUreK1CxkUwk4y6W2Qoo88l0UF.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
   <span class="Sarp">
   HD</span>
 </a>
-<a href="peliculas/trolls.html" style="position: relative; display: inline-block;">
+<a href="https://andresvpn.github.io/VPN-MOVIE/peliculas/trolls.html" style="position: relative; display: inline-block;">
   <img class="poster" src="https://media.themoviedb.org/t/p/w220_and_h330_face/9VlK2j0THZWzhQPq0W3Oc0IIdBB.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
   <span class="Sarp">
   720p</span>
 </a>
-<a href="peliculas/trolls2.html" style="position: relative; display: inline-block;">
+<a href="https://andresvpn.github.io/VPN-MOVIE/peliculas/trolls2.html" style="position: relative; display: inline-block;">
   <img class="poster" src="https://media.themoviedb.org/t/p/w220_and_h330_face/7W0G3YECgDAfnuiHG91r8WqgIOe.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
   <span class="Sarp">
   HD</span>
 </a>
-  <a href="peliculas/trolls3.html" style="position: relative; display: inline-block;">
+  <a href="https://andresvpn.github.io/VPN-MOVIE/peliculas/trolls3.html" style="position: relative; display: inline-block;">
   <img class="poster" src="https://image.tmdb.org/t/p/original/t9tNIeFqz8G2B2I6CnyFq0NYPNQ.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
   <span class="Sarp">
   720p</span>
 </a>
+  <a href="go:22" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://btv.mx/posters/768tb0bCNbECl9KYwt8Slq3eykA.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  HD</span>
+</a>
+  <a href="go:28" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://btv.mx/posters/1629402319340.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  HD</span>
+</a>
 </div></div>
+
+
+
+<div><div align="center" class="poster">
+  <a href="go:32" style="position: relative; display: inline-block;">
+  <img class="poster" src="http://mastvgo.com:80/images/1CX9HZ1TpsR6jq_dGSnHkF7DaaYG-JnaH_5zbvTz1M5mB5g6BUIWNSoocDNYisyLUSk1r0k8PVq1Dwf6Bx-nuwLpJSKA0zKXCVtkwScKYbI.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  HD</span>
+</a>
+  <a href="go:30" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://media.themoviedb.org/t/p/w220_and_h330_face/b5Jb7GoQaqIXy4VEdnQa0UrQZI.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  HD</span>
+</a>
+  <a href="go:26" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://btv.mx/posters/kAU8CSAY5aCS91dSD5oky5TZcJU.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  HD</span>
+</a>
+  <a href="go:20" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://btv.mx/posters/x6p5jZw7YwqBadiKBDzmXs03Emz.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  HD</span>
+</a>
+  <a href="go:19" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://btv.mx/posters/1VXMrUioKfPAPSsezHKexx77Dbz.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  HD</span>
+</a>
+  <a href="go:13" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://btv.mx/posters/7XB9m8za6wxunWgbNzkGWMY4W8G.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  HD</span>
+</a>
+  <a href="go:14" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://btv.mx/posters/6453Ua2jBSngAAE5iu900EoBVci.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  HD</span>
+</a>
+  <a href="go:15" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://btv.mx/posters/y8y6Fv0k068OnHBZtu949A1t6pj.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  HD</span>
+</a>
+  <a href="go:16" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://btv.mx/posters/atQkfPhe1cPKg003XaLIFLgbarV.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  HD</span>
+</a>
+  <a href="go:17" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://btv.mx/posters/3ZOBFJyuac5lEUXba6SWKUlI6tw.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  HD</span>
+</a>
+  <a href="go:18" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://btv.mx/posters/tVcI8dqa9Lh7sLuDbWtS2x9GiJk.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  HD</span>
+</a>
+  <a href="go:21" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://btv.mx/posters/nencAZfIo6E0zdkPvOK4z8bgen.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  HD</span>
+</a>
+</a>
+  <a href="go:27" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://btv.mx/posters/jl7SAASESXGbGawlQiZoM6nf8G0.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  HD</span>
+</a>
+</div></div>
+
+
+
 <h2><font style="color:#fff;font-size:16px;padding:8px;">comedia</font></h2>
 <div><div align="center" class="poster">
+<a href="go:29" style="position: relative; display: inline-block;">
+  <img class="poster" src="http://mastvgo.com:80/images/1CX9HZ1TpsR6jq_dGSnHkF7DaaYG-JnaH_5zbvTz1M5mB5g6BUIWNSoocDNYisyLWu6BLxT_Gjkz6O8yjbrQBlch5N8f5mBklj3jiblzABE.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  HD</span>
+</a>
   <a href="go:1" style="position: relative; display: inline-block;">
   <img class="poster" src="https://media.themoviedb.org/t/p/w220_and_h330_face/6ABy1EUjcJKci9mQzrDppLWB24q.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
   <span class="Sarp">
@@ -239,9 +484,31 @@ footer span{transform:scale(1);}
   <span class="Sarp">
   HD</span>
 </a>
+  <a href="go:3" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://btv.mx/posters/sBzo4JMW5s2pt8Kal8aOvIlPGN6.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  HD</span>
+</a>
+ <a href="go:4" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://btv.mx/posters/kV14x4DnVWvNCg5NO2MO0iU3NlK.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  HD</span>
+</a>
+ <a href="go:5" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://btv.mx/posters/1495235534256.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  HD</span>
+</a>
+<a href="go:6" style="position: relative; display: inline-block;">
+  <img class="poster" src="https://btv.mx/posters/chvtQnNcN8O4zYPBlMU7XCLbJTV.jpg" style="border-radius:7px; border: 0px solid #ff0000;" width="130px" height="200px"/>
+  <span class="Sarp">
+  HD</span>
+</a>
 </div></div>
 
 </body>
+<script src="https://andresvpn.github.io/VPN-MOVIE/notificaciones.js"></script>
+    
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     let slides = document.querySelectorAll(".SliderSarp-slide");
@@ -254,6 +521,39 @@ document.addEventListener("DOMContentLoaded", function() {
         slides[currentSlide].classList.add("active");
     }
 })
+const notificationCount = notifications.length;
+    document.querySelector('.Sarp').textContent = notificationCount;
 
+</script>
+<script src="user.js"></script>
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const user = urlParams.get('user');
+    const password = urlParams.get('password');
+
+    document.addEventListener('DOMContentLoaded', function() {
+        currentFile = 'login';
+
+        const usuario = usuarios.find(u => u.nombre === user && u.contraseña === password);
+
+        if (usuario) {
+            usuario.conexiones[currentFile]++;
+        }
+
+        window.addEventListener('beforeunload', function(event) {
+            if (usuario) {
+                usuario.conexiones[currentFile]--;
+            }
+        });
+    });
+      const newUrl = `buscador.html?user=${user}&password=${password}`;
+
+const link = document.getElementById('buscador');
+// Establecer la nueva URL como el atributo href del enlace
+const newUrl2 = `notifi.html?user=${user}&password=${password}`;
+
+const link2 = document.getElementById('noti');
+link.setAttribute('href', newUrl); 
+link2.setAttribute('href', newUrl2); 
 </script>
 </html>

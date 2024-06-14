@@ -75,9 +75,30 @@
         #categoryDropdown:focus {
             outline: none;
         }
+        .alert {
+            background-color: #ffcc00;
+            color: #333;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+            max-width: 600px;
+        }
+        .alert a {
+            color: #ff0000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .alert a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
+    <div class="alert">
+        <h3>AVISO IMPORTANTE</h3>
+        <p>Para descargar y reproducir los capítulos de las series, usa el VLC Player. Descárgalo <a href="https://play.google.com/store/apps/details?id=org.videolan.vlc" target="_blank">AQUÍ</a>.</p>
+    </div>
     <select id="categoryDropdown" onchange="loadSeries(this.value)"></select>
     <div id="seriesContainer" class="series-container"></div>
 
@@ -95,7 +116,6 @@
                     categoryDropdown.appendChild(option);
                 });
                 loadSeries(categories[0].category_id); // Cargar la primera categoría por defecto después de cargar las categorías.
-                document.getElementById('categoryTitle').textContent = `CATEGORIAS: ${categories[0].category_name}`;
             } catch (error) {
                 console.error('Error loading categories:', error);
             }
@@ -159,11 +179,33 @@
         }
 
         function playEpisode(episodeId) {
-            const url = `https://2023.milleriptv.site/series/descargamillerflixpro/descargamillerflixpro/${episodeId}.mp4`;
+            const url = `http://2023.milleriptv.site/series/2024/2024/${episodeId}.mp4`;
             window.open(url, 'EpisodePlayer', 'width=800,height=450,scrollbars=no');
         }
 
         loadCategories();
     </script>
+    <script src="user.js"></script>
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const user = urlParams.get('user');
+    const password = urlParams.get('password');
+
+    document.addEventListener('DOMContentLoaded', function() {
+        currentFile = 'series';
+
+        const usuario = usuarios.find(u => u.nombre === user && u.contraseña === password);
+
+        if (usuario) {
+            usuario.conexiones[currentFile]++;
+        }
+
+        window.addEventListener('beforeunload', function(event) {
+            if (usuario) {
+                usuario.conexiones[currentFile]--;
+            }
+        });
+    });
+</script>
 </body>
 </html>

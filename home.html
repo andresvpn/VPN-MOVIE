@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Aplicación</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .menu-container {
+            background-color: #000;
+            border: 2px solid #00e676;
+            border-radius: 10px;
+            box-shadow: 
+                0 4px 8px rgba(0, 0, 0, 0.3),
+                inset 0 0 10px rgba(0, 255, 0, 0.5);
+            overflow: hidden;
+            text-align: center;
+            width: 320px;
+            margin-top: 20px;
+        }
+
+        .menu-title {
+            background-color: #00e676;
+            color: #000;
+            font-size: 24px;
+            padding: 15px;
+            text-shadow: 1px 1px #000;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 20px;
+            text-decoration: none;
+            color: #00e676;
+            border-bottom: 1px solid #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item:hover {
+            background-color: #00e676;
+            color: #000;
+            text-shadow: 1px 1px #fff;
+        }
+
+        .emoji {
+            position: absolute;
+            font-size: 24px;
+            will-change: transform;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-5vh);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(105vh);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <div class="menu-title">SERVICIOS DISPONIBLES</div>
+        <a href="vivo" id="vivo" class="menu-item">TV EN VIVO</a>
+        <a href="index" id="movie"  class="menu-item">PELÍCULAS</a>
+<a href="series" class="menu-item">SERIES</a>
+
+    </div>
+
+    <script>
+        const emojis = ["😝", "🤠", "🥰", "😂", "😇", "😊", "😍", "🤔", "😎", "🤩"];
+        
+        function createEmoji() {
+            const emoji = document.createElement('div');
+            const size = Math.random() * 10 + 20;
+            const position = Math.random() * window.innerWidth;
+            const duration = Math.random() * 3 + 2;
+
+            emoji.classList.add('emoji');
+            emoji.style.fontSize = `${size}px`;
+            emoji.style.left = `${position}px`;
+            emoji.style.animationDuration = `${duration}s`;
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+
+            document.body.appendChild(emoji);
+
+            setTimeout(() => {
+                emoji.remove();
+            }, duration * 1000);
+        }
+
+        setInterval(createEmoji, 500);
+    </script>
+<script src="user.js"></script>
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+    const user = urlParams.get('user');
+    const password = urlParams.get('password');
+
+    document.addEventListener('DOMContentLoaded', function() {
+        currentFile = 'home';
+
+        const usuario = usuarios.find(u => u.nombre === user && u.contraseña === password);
+
+        if (usuario) {
+            usuario.conexiones[currentFile]++;
+        }
+
+        window.addEventListener('beforeunload', function(event) {
+            if (usuario) {
+                usuario.conexiones[currentFile]--;
+            }
+        });
+    });
+      const newUrl = `vivo.html?user=${user}&password=${password}`;
+
+const link = document.getElementById('vivo');
+// Establecer la nueva URL como el atributo href del enlace
+const newUrl2 = `index.html?user=${user}&password=${password}`;
+
+const link2 = document.getElementById('movie');
+const newUrl3 = `series.html?user=${user}&password=${password}`;
+
+const link3 = document.getElementById('serie');
+link.setAttribute('href', newUrl); 
+link2.setAttribute('href', newUrl2); 
+link3.setAttribute('href', newUrl3); 
+</script>
+</body>
+</html>
