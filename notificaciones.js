@@ -1,4 +1,9 @@
-const notifications = [ 
+const notifications = [
+{ title: "RAPIDOS Y FURIOSOS 8", 
+message: "Pelicula Disponible",
+ time: "14/06/2024", 
+ imageUrl: "https://image.tmdb.org/t/p/original/bFOasfXkY2abyjg7jPlz6ONxd.jpg", 
+ url: "go:46" },
  { title: "SUPER MARIO BROS", 
 message: "Pelicula Disponible",
  time: "13/06/2024", 
