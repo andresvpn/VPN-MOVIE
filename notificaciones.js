@@ -1,4 +1,9 @@
 const notifications = [
+{ title: "TOP GUN MAVERICK", 
+message: "Pelicula Disponible",
+ time: "14/06/2024", 
+ imageUrl: "http://mastvgo.com/images/1CX9HZ1TpsR6jq_dGSnHkF7DaaYG-JnaH_5zbvTz1M5mB5g6BUIWNSoocDNYisyLe4EgTb4RhWVNMly0M-kCs03UHKVUgH0qYb0jIJEHpck.jpg", 
+ url: "go:47" },
 { title: "RAPIDOS Y FURIOSOS 8", 
 message: "Pelicula Disponible",
  time: "14/06/2024", 
