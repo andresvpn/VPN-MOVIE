@@ -37,7 +37,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
                 expirationDate.textContent = `Fecha de vencimiento: ${fechaVencimiento.toLocaleDateString()}`;
 
                 setTimeout(() => {
-                    window.location.href = `home.html?user=${usuario.nombre}&password=${usuario.contraseña}`;
+                    window.location.href = `go:home`;
                 }, 3000);
             }
         }
