@@ -1,4 +1,9 @@
 const notifications = [ 
+ { title: "SUPER MARIO BROS", 
+message: "Pelicula Disponible",
+ time: "13/06/2024", 
+ imageUrl: "https://media.themoviedb.org/t/p/w220_and_h330_face/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg", 
+ url: "go:32" },
  { title: "JUNG_E", 
 message: "Pelicula Disponible",
  time: "13/06/2024", 
