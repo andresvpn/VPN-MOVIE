@@ -1,30 +1,67 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reproductor de Video</title>
+    <title>Reproductor de video con bloqueador de anuncios</title>
     <style>
+        /* Estilos para el reproductor de video */
         body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #000;
-            margin: 0;
+            font-family: Arial, sans-serif;
         }
-        video {
-            width: 80%;
-            max-width: 800px;
-            border: 5px solid #fff;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        #video-container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        #video-player {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
     </style>
 </head>
 <body>
-    <video controls>
-        <source src="http://mastvgo.com/movie/Lidia99/Lidia9928/2765.mp4" type="video/mp4">
-        Tu navegador no soporta la reproducción de video.
-    </video>
+    <div id="video-container">
+        <iframe id="video-player" src="" allow="autoplay" sandbox="allow-scripts"></iframe>
+    </div>
+
+    <script>
+        // Función para obtener la URL del iframe
+        function getFileUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('file');
+        }
+
+        // Función para detectar y bloquear redireccionamientos no deseados
+        function bloquearRedireccionamientos() {
+            if (window.location !== window.parent.location) {
+                window.parent.location = window.location;
+            }
+        }
+
+        // Función para establecer la URL del iframe
+        function setFileUrl() {
+            const fileUrl = getFileUrl();
+            if (fileUrl) {
+                const videoPlayer = document.getElementById('video-player');
+                videoPlayer.src = fileUrl;
+            } else {
+                console.error("No se encontró el parámetro 'file' en la URL.");
+            }
+        }
+
+        // Bloquear redireccionamientos cada segundo
+        setInterval(bloquearRedireccionamientos, 1000);
+
+        // Cargar el video cuando la página esté lista
+        window.onload = setFileUrl;
+    </script>
 </body>
 </html>
