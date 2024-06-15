@@ -14,21 +14,26 @@
             height: 100vh;
             font-family: Arial, sans-serif;
         }
-        #video-container {
-            width: 100%;
-            height: 100%;
+        .video-responsive {
+            position: none;
+            padding-bottom: 50.25%; /* 16/9 ratio */
+            padding-top: 40px; /* IE6 workaround */
+            height: 0;
             overflow: hidden;
-            position: relative;
         }
-        #video-player {
+        .video-responsive iframe,
+        .video-responsive object,
+        .video-responsive embed {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            border: none;
         }
     </style>
 </head>
 <body>
-    <div id="video-container">
+    <div class="video-responsive">
         <iframe id="video-player" src="" allow="autoplay" sandbox="allow-scripts"></iframe>
     </div>
 
