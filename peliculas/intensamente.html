@@ -1,53 +1,71 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/estilosP.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <title>VPN-MOVIE</title>
-    <style type="text/css">
-        #banner {
-            background-image: url('https://image.tmdb.org/t/p/original//stKGOm8UyhuLPR9sZLjs5AkmncA.jpg');
+    <title>Reproductor de video con bloqueador de anuncios</title>
+    <style>
+        /* Estilos para el reproductor de video */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .video-responsive {
+            position: none;
+            padding-bottom: 50.25%; /* 16/9 ratio */
+            padding-top: 40px; /* IE6 workaround */
+            height: 0;
+            overflow: hidden;
+        }
+        .video-responsive iframe,
+        .video-responsive object,
+        .video-responsive embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-
-    <!-- Banner -->
-    <div class="banner" id="banner">
-        <div class="banner-contenedor">
-            <center>
-                <h1 class="banner-titulo">IntensaMente 2</h1>
-                <div class="botones">
-                    Duración: 1h 37m. <button class="hd">HD</button>
-                </div>
-                <div class="banner-sinopsis">Una aventura completamente nueva dentro de la cabeza adolescente de Riley que presenta un nuevo conjunto de emociones.</div>
-            </center>
-        </div>
-        <div class="banner-fadeBottom"></div>
+    <div class="video-responsive">
+        <iframe id="video-player" src="" allow="autoplay" sandbox="allow-scripts"></iframe>
     </div>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <script>
+        // Función para obtener la URL del iframe
+        function getFileUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('file');
+        }
 
-    <!-- Video -->
-    <div class="video-contenedor">
-        <div class="video">
-            <center>
-                <iframe class="item-video" allowfullscreen="" frameborder="0" height="695px" id="iframe2" onload="$('.iframe-loading').css('background-image');" sandbox="allow-same-origin allow-scripts"
-                    scrolling="no" src="https://vpn-movie-ofc.blogspot.com/2024/06/embed_15.html?file=https://swdyu.com/e/r6x5oj3ekweb&m=1" style="background-color: black; border-color: #fff; border-radius: 10px; border-style: solid; border-width: 2px;" width="100%"></iframe>
-            </center>
-        </div>
-    </div>
+        // Funcion para que sea compatible en otros dispositivos 
+        function bloquearRedireccionamientos() {
+            if (window.location !== window.parent.location) {
+                window.parent.location = window.location;
+            }
+        }
 
-    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+        // Función para establecer la URL del iframe
+        function setFileUrl() {
+            const fileUrl = getFileUrl();
+            if (fileUrl) {
+                const videoPlayer = document.getElementById('video-player');
+                videoPlayer.src = fileUrl;
+            } else {
+                videoPlayer.src = "https://telegra.ph/file/7af07da609c73477db23f.jpg";
+            }
+        }
+
+          setInterval(bloquearRedireccionamientos, 1000);
+
+        // Cargar el video cuando la página esté lista
+        window.onload = setFileUrl;
+    </script>
 </body>
 </html>
-            
