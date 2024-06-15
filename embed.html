@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
     <title>Reproductor de video con bloqueador de anuncios</title>
     <style>
-        /* Estilos para el reproductor de video */
-        body {
+        body, html {
             margin: 0;
             padding: 0;
-            background-color: #000;
+            width: 100%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            background-color: #000;
+            overflow: hidden;
             font-family: Arial, sans-serif;
         }
         .video-responsive {
-            position: none;
-            padding-bottom: 50.25%; /* 16/9 ratio */
-            padding-top: 40px; /* IE6 workaround */
-            height: 0;
-            overflow: hidden;
-        }
-        .video-responsive iframe,
-        .video-responsive object,
-        .video-responsive embed {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 50%;
+            left: 50%;
+            width: 100vh; /* Usar la altura del viewport para el ancho del iframe rotado */
+            height: 100vw; /* Usar el ancho del viewport para la altura del iframe rotado */
+            transform: translate(-50%, -50%) rotate(90deg);
+            transform-origin: center;
+        }
+        .video-responsive iframe {
             width: 100%;
             height: 100%;
         }
@@ -44,29 +44,32 @@
             return urlParams.get('file');
         }
 
-        // Función para detectar y bloquear redireccionamientos no deseados
-        function bloquearRedireccionamientos() {
-            if (window.location !== window.parent.location) {
-                window.parent.location = window.location;
-            }
-        }
-
         // Función para establecer la URL del iframe
         function setFileUrl() {
             const fileUrl = getFileUrl();
-            if (fileUrl) {
-                const videoPlayer = document.getElementById('video-player');
-                videoPlayer.src = fileUrl;
-            } else {
-                console.error("No se encontró el parámetro 'file' en la URL.");
+            const videoPlayer = document.getElementById('video-player');
+            videoPlayer.src = fileUrl ? fileUrl : "https://telegra.ph/file/7af07da609c73477db23f.jpg";
+        }
+
+        // Función para solicitar pantalla completa
+        function enableFullScreen() {
+            const elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) { // Firefox
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) { // Chrome, Safari y Opera
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { // IE/Edge
+                elem.msRequestFullscreen();
             }
         }
 
-        // Bloquear redireccionamientos cada segundo
-        setInterval(bloquearRedireccionamientos, 1000);
-
         // Cargar el video cuando la página esté lista
-        window.onload = setFileUrl;
+        window.onload = function() {
+            setFileUrl();
+            enableFullScreen();
+        }
     </script>
 </body>
 </html>
