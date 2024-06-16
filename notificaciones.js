@@ -1,4 +1,9 @@
 const notifications = [
+ { title: "INTENSAMENTE 2", 
+message: "Pelicula Disponible",
+ time: "14/06/2024", 
+ imageUrl: "https://image.tmdb.org/t/p/w500//2PuAY3xSvbchQWqpSiXw08Yt0NP.jpg", 
+ url: "go:48" },
 { title: "TOP GUN MAVERICK", 
 message: "Pelicula Disponible",
  time: "14/06/2024", 
