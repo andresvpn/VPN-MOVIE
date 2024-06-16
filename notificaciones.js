@@ -1,4 +1,9 @@
 const notifications = [
+ { title: "LOS JUEGOS DEL HAMBRE", 
+message: "Pelicula Disponible",
+ time: "16/06/2024", 
+ imageUrl: "http://mastvgo.com/images/1CX9HZ1TpsR6jq_dGSnHkF7DaaYG-JnaH_5zbvTz1M5mB5g6BUIWNSoocDNYisyLtSw4I1soCwCo5RxB3mICB-jnPKfN85WBEtf8Z_FjnVU.jpg", 
+ url: "go:48" },
  { title: "INTENSAMENTE 2", 
 message: "Pelicula Disponible",
  time: "14/06/2024", 
