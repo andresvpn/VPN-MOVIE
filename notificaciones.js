@@ -2,7 +2,7 @@ const notifications = [
  { title: "ESPN", 
 message: "Canal Disponible",
  time: "16/06/2024", 
- imageUrl: "https://telegra.ph/file/46b31cdb0a74b0003d7e1.jpg", 
+ imageUrl: "https://telegra.ph/file/507facd35fbd590923291.jpg", 
  url: "go:tvvivo" },
  { title: "LOS JUEGOS DEL HAMBRE", 
 message: "Pelicula Disponible",
