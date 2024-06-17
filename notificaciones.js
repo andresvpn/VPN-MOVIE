@@ -1,4 +1,9 @@
 const notifications = [
+ { title: "Un Gallo Con Muchos Huevos", 
+message: "Pelicula Disponible",
+ time: "16/06/2024", 
+ imageUrl: "http://mastvgo.com/images/1CX9HZ1TpsR6jq_dGSnHkF7DaaYG-JnaH_5zbvTz1M5mB5g6BUIWNSoocDNYisyLK5TAg7C85rkLJ5NMxBYTyWDVdIF15uZ2iX20tfTAcbM.jpg", 
+ url: "go:52" },
  { title: "ESPN", 
 message: "Canal Disponible",
  time: "16/06/2024", 
