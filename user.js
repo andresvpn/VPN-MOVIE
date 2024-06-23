@@ -4,7 +4,7 @@ const usuarios = [
     { id: 3, nombre: "alejandra", contraseña: "123", fechaVencimiento: "2024-012-24", limite: 2, conexiones: { login: 0, home: 0, live: 0, series: 0, buscador: 0, notificaciones: 0 } },
     { id: 4, nombre: "esteban", contraseña: "123", fechaVencimiento: "2024-012-24", limite: 2, conexiones: { login: 0, home: 0, live: 0, series: 0, buscador: 0, notificaciones: 0 } },
     { id: 5, nombre: "pipe", contraseña: "123", fechaVencimiento: "2024-012-24", limite: 2, conexiones: { login: 0, home: 0, live: 0, series: 0, buscador: 0, notificaciones: 0 } },
-    { id: 6, nombre: "julian", contraseña: "1984", fechaVencimiento: "2024-06-24", limite: 2, conexiones: { login: 0, home: 0, live: 0, series: 0, buscador: 0, notificaciones: 0 } },
+    { id: 6, nombre: "julian", contraseña: "1984", fechaVencimiento: "2024-07-23", limite: 2, conexiones: { login: 0, home: 0, live: 0, series: 0, buscador: 0, notificaciones: 0 } },
  
   
     // Agrega más usuarios si es necesario
