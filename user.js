@@ -9,7 +9,7 @@ const usuarios = [
   
     // Agrega más usuarios si es necesario
 ];
-
+/*
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -50,3 +50,4 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         errorMessage.textContent = 'Usuario o contraseña incorrectos';
     }
 });
+*/
