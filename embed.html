@@ -1,75 +1,53 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
-    <title>Reproductor de video con bloqueador de anuncios</title>
+    <title>VPN MOVIE</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
     <style>
-        body, html {
+        body {
+            background-color: black;
             margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #000;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
+            height: 100vh;
         }
-        .video-responsive {
+
+        #player {
+            width: 80%;
+            height: 80%;
+            position: relative; /* Añade posición relativa para que el logo se posicione correctamente */
+        }
+
+        .clappr-logo {
+            background-image: url('https://telegra.ph/file/7af07da609c73477db23f.jpg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 100px; /* ajusta el tamaño según sea necesario */
+            height: 30px; /* ajusta el tamaño según sea necesario */
             position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100vh; /* Usar la altura del viewport para el ancho del iframe rotado */
-            height: 100vw; /* Usar el ancho del viewport para la altura del iframe rotado */
-            transform: translate(-50%, -50%) rotate(90deg);
-            transform-origin: center;
-        }
-        .video-responsive iframe {
-            width: 100%;
-            height: 100%;
+            top: 10px;
+            left: 10px;
+            z-index: 1000; /* asegúrate de que esté por encima del reproductor */
         }
     </style>
 </head>
 <body>
-    <div class="video-responsive">
-        <iframe id="video-player" src="" allow="autoplay" sandbox="allow-scripts"></iframe>
-    </div>
+    <div id="player"></div>
+    <div class="clappr-logo"></div>
 
     <script>
-        // Función para obtener la URL del iframe
-        function getFileUrl() {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get('file');
-        }
+        // Obtener el parámetro 'file' de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const fileParam = urlParams.get('file');
 
-        // Función para establecer la URL del iframe
-        function setFileUrl() {
-            const fileUrl = getFileUrl();
-            const videoPlayer = document.getElementById('video-player');
-            videoPlayer.src = fileUrl ? fileUrl : "https://telegra.ph/file/7af07da609c73477db23f.jpg";
-        }
-
-        // Función para solicitar pantalla completa
-        function enableFullScreen() {
-            const elem = document.documentElement;
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen();
-            } else if (elem.mozRequestFullScreen) { // Firefox
-                elem.mozRequestFullScreen();
-            } else if (elem.webkitRequestFullscreen) { // Chrome, Safari y Opera
-                elem.webkitRequestFullscreen();
-            } else if (elem.msRequestFullscreen) { // IE/Edge
-                elem.msRequestFullscreen();
-            }
-        }
-
-        // Cargar el video cuando la página esté lista
-        window.onload = function() {
-            setFileUrl();
-            enableFullScreen();
-        }
+        // Crear el reproductor Clappr con la fuente obtenida del parámetro 'file'
+        var player = new Clappr.Player({
+            source: fileParam,
+            parentId: '#player',
+            height: '100%',
+            width: '100%',
+        });
     </script>
 </body>
 </html>
